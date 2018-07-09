@@ -32,18 +32,7 @@ function isNumberKey(evt)
 }
 
 let nextWord = ((id) => {
-    let wordArray = ['week','day','year'];
-    let count = -1;
-
-    return () => {
-      
-      return wordArray[++count % wordArray.length];
-    }
-  })();
-
-
-  let nextWord2 = ((id) => {
-    let wordArray = ['month','day','year'];
+    let wordArray = ['month','day','week','year'];
     let count = -1;
 
     return () => {
@@ -61,6 +50,13 @@ let nextWord = ((id) => {
         mainFrameOne.style.display == "none" ? "block" : "none"); 
     mainFrameTwo.style.display = (
         mainFrameTwo.style.display == "none" ? "block" : "none"); 
+
+    if(document.getElementById("switch").className == "switch") {
+      document.getElementById("switch").className = "switch2";
+    } else {
+      document.getElementById("switch").className = "switch";
+    }
+    
  }
 /* ============================================ */
 
@@ -82,6 +78,9 @@ function checkTotal() {
   if(perSum == 'year' && perTotal == 'day') {
     total = ((expectedSum * expectedPeriod) /365).toFixed(2);
   }
+  if(perSum == 'year' && perTotal == 'week') {
+    total = ((expectedSum / expectedPeriod) /52).toFixed(2);
+  }
   if(perSum == 'week' && perTotal == 'year') {
     total = (expectedSum * expectedPeriod * 52).toFixed(2);
   }
@@ -96,6 +95,18 @@ function checkTotal() {
   }
   if(perSum == 'day' && perTotal == 'month') {
     total = ((expectedSum * expectedPeriod) * 12).toFixed(2);;
+  }
+  if(perSum == 'day' && perTotal == 'week') {
+    total = ((expectedSum * expectedPeriod) * 7).toFixed(2);;
+  }
+  if(perSum == 'month' && perTotal == 'year') {
+    total = ((expectedSum * expectedPeriod) *12).toFixed(2);
+  }
+  if(perSum == 'month' && perTotal == 'week') {
+    total = ((expectedSum * expectedPeriod) / 4).toFixed(2);;
+  }
+  if(perSum == 'month' && perTotal == 'day') {
+    total = ((expectedSum * expectedPeriod) / 30).toFixed(2);;
   }
 
   document.getElementById('totalVal').innerHTML =  '$' + total;
@@ -117,6 +128,9 @@ function checkTotal2() {
   if(perSum == 'year' && perTotal == 'day') {
     total = (expectedSum / (expectedPeriod * 365)).toFixed(2);
   }
+  if(perSum == 'year' && perTotal == 'week') {
+    total = (expectedSum / (expectedPeriod * 52)).toFixed(2);
+  }
   if(perSum == 'week' && perTotal == 'year') {
     total = ((expectedSum *52) / expectedPeriod ).toFixed(2);
   }
@@ -131,6 +145,18 @@ function checkTotal2() {
   }
   if(perSum == 'day' && perTotal == 'month') {
     total = ((expectedSum * 30) / expectedPeriod ).toFixed(2);;
+  }
+  if(perSum == 'day' && perTotal == 'week') {
+    total = ((expectedSum * 7) / expectedPeriod ).toFixed(2);;
+  }
+  if(perSum == 'month' && perTotal == 'day') {
+    total = ((expectedSum / 30) / expectedPeriod ).toFixed(2);
+  }
+  if(perSum == 'month' && perTotal == 'year') {
+    total = ((expectedSum * 12) / expectedPeriod ).toFixed(2);
+  }
+  if(perSum == 'month' && perTotal == 'week') {
+    total = ((expectedSum / 7) / expectedPeriod ).toFixed(2);;
   }
 
   document.getElementById('cal2TotalVal').innerHTML =  '$' + total;

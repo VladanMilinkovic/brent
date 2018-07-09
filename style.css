@@ -1,6 +1,12 @@
+@font-face {
+    font-family: SanFrancisco;
+    src: url('./fonts/SF-Pro-Display-Regular.otf');
+}
+
 
 html {
     background-color: #000000;
+    font-family: SanFrancisco;
 }
 
 .calculator {
@@ -10,13 +16,14 @@ html {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     color: #ffffff;
-    font-size: 38px;
+    font-size: 58px;
     text-align: center;
-
+    width: 100%;
 }
 
 .calculator span {
     color: #fc7e4f;
+    font-weight: bold;
 }
 
 .calculator p {
@@ -25,11 +32,12 @@ html {
 }
 
 .calculator input {
-    font-size: 38px;
+    font-size: 58px;
     color: #fc7e4f;
     background:rgba(0,0,0,0);
     border:none;
     text-align: center;
+    font-weight: bold;
 }
 .calculator input {
  
@@ -60,6 +68,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .switch {
+    background-image: url('./images/arrow_down.png');
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.switch2 {
     background-image: url('./images/switch.png');
     background-repeat: no-repeat;
     height: 50px;
@@ -78,6 +99,20 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100px;
     width: 70px;
 }
+#textCalc {
+    width: 220px;
+}
+
+#sell, #textCalc, #setPeriod, #expectPeriod, #totalPer {
+    cursor: pointer;
+}
+
+#cal2TextCalc {
+    min-width: 200px;
+}
+#expectPeriod {
+    width: 100px;
+}
 
 @media screen and (max-width: 600px) {
     .calculator {
@@ -95,7 +130,7 @@ input[type=number]::-webkit-outer-spin-button {
         -webkit-transform: translate(-50%, -50%);
         transform: none;
         color: #ffffff;
-        font-size: 38px;
+        font-size: 40px;
         text-align: left;
         margin-top: 10%;
     }
@@ -106,10 +141,38 @@ input[type=number]::-webkit-outer-spin-button {
 
     .calculator input {
         text-align: left;
-        width: 130px;
+        width: 100px;
+        font-size: 40px;
     }
 
-    .switch {
+    .switch, .switch2 {
+        top: 90% !important;
+    }
+  }
+
+  @media screen and (max-width: 321px) {
+    .calculator {
+        font-size: 38px;
+    }
+
+    .calculator {
+        font-size: 38px;
+    }
+
+
+    .calculator input {
+        font-size: 38px;
+    }
+
+    #textCalc {
+        width: 150px;
+    }
+
+    #expectPeriod {
+        width: 50px;
+    }
+
+    .switch, .switch2 {
         top: 90% !important;
     }
   }
