@@ -13,12 +13,12 @@
         <p>
             If I <span contenteditable="true" id="sell">sell</span> <br class="break-line">
             <input onkeypress="return isNumberKey(event)" onkeyup="inputSize('expectedSum')" type="text" size="6" id="expectedSum" onfocusout="checkTotal()">
-            <input type="text" id="textCalc" onkeyup="updateValue(this, 'updateText'); inputSize('textCalc')" size="10"> <br class="break-line"> per 
+            <span contenteditable="true" id="textCalc" onkeyup="updateValue(this, 'updateText')">widgets</span> <br class="break-line"> per 
             <span  id="setPeriod" onclick="document.getElementById('setPeriod').innerHTML = nextWord(); checkTotal()"></span> <br class="break-line">
         </p>
         <p>
         </p>
-            at <input onkeypress="return isNumberKey(event)" onkeyup="inputSize('expectPeriod')" type="text" size="6" id="expectPeriod" onchange="checkTotal()"> <br class="break-line"> per <span id="updateText"></span> <br class="break-line">
+            at <input onkeypress="return isNumberKey(event)" onkeyup="inputSize('expectPeriod')" type="text" size="6" id="expectPeriod" onchange="checkTotal()"> <br class="break-line"> per <span id="updateText" contenteditable="true" ></span> <br class="break-line">
         </p>
         <p>
             = <span id="totalVal" ></span> per <span id="totalPer" onclick="document.getElementById('totalPer').innerHTML = nextWord(); checkTotal()"></span>
@@ -30,7 +30,7 @@
             If I want to make <br class="break-line"> <input onkeypress="return isNumberKey(event)" onfocusout="checkTotal2()" type="text" value="5000" id="cal2ExpectedSum"> per <span id="cal2SumPeriod" onclick="document.getElementById('cal2SumPeriod').innerHTML = nextWord(); checkTotal2()">year</span> <br class="break-line">
         </p>
         <p>
-            I need to <span contenteditable="true">sell</span> <br class="break-line"> <input onkeypress="return isNumberKey(event)" type="text" value='1000' id="cal2ExpectPeriod"  onfocusout="checkTotal2()"> <input id="cal2TextCalc" onkeyup="updateValue(this, 'cal2UpdateText'); inputSize('cal2TextCalc')" value="widget"/> <br class="break-line"> per <span id="cal2PartPeriod" onclick="document.getElementById('cal2PartPeriod').innerHTML = nextWord(); checkTotal2()">year</span> <br class="break-line">
+            I need to <span contenteditable="true">sell</span> <br class="break-line"> <input onkeypress="return isNumberKey(event)" type="text" value='1000' id="cal2ExpectPeriod"  onfocusout="checkTotal2()"> <span contenteditable="true"  id="cal2TextCalc">widget</span> <br class="break-line"> per <span id="cal2PartPeriod" onclick="document.getElementById('cal2PartPeriod').innerHTML = nextWord(); checkTotal2()">year</span> <br class="break-line">
         </p>
         <p>
             at  <span id=cal2TotalVal>$5</span> per <span contenteditable="true" id="cal2UpdateText">widget</span>
