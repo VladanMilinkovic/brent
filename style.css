@@ -36,7 +36,7 @@ html {
     color: #fc7e4f;
     background:rgba(0,0,0,0);
     border:none;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
 }
 .calculator input {
@@ -50,7 +50,7 @@ html {
 } */
 
 .calculator input:focus {
-    min-width: 150px;
+    min-width: 130px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -96,6 +96,8 @@ input[type=number]::-webkit-outer-spin-button {
 .calc {
     background-image: url('./images/calc.png');
     background-repeat: no-repeat;
+    margin-left: 30px;
+    margin-top: 30px;
     height: 100px;
     width: 70px;
 }
@@ -103,9 +105,12 @@ input[type=number]::-webkit-outer-spin-button {
     width: 220px;
 }
 
-#sell, #textCalc, #setPeriod, #expectPeriod, #totalPer, #cal2ExpectedSum, #cal2SumPeriod, 
-#sell2, #cal2ExpectPeriod, #cal2TextCalc, #cal2PartPeriod, #cal2UpdateText {
+ #setPeriod, #totalPer,  #cal2SumPeriod, 
+  #cal2PartPeriod {
     cursor: pointer;
+}
+#sell,#sell2, #textCalc, #cal2TextCalc,#cal2ExpectedSum, #cal2ExpectPeriod, #expectPeriod, cal2UpdateText {
+    cursor: text;
 }
 
 #cal2TextCalc {
@@ -113,6 +118,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #expectPeriod {
     width: 100px;
+}
+#flex {
+    display: flex;
+}
+#inner {
+    padding: 0 20px;
+    min-width: 100px;
+    height:30px;
+    outline:none;
+    background-color: #dfd4d7;
 }
 
 @media screen and (max-width: 600px) {

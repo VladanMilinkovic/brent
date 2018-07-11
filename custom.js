@@ -1,7 +1,7 @@
 /* Default value */
 document.getElementById('expectedSum').value = 1000;
 document.getElementById('expectPeriod').value = 50;
-document.getElementById('totalVal').innerHTML = '$' + 50000;
+document.getElementById('totalVal').innerHTML =  50000;
 document.getElementById("updateText").innerHTML = 'widgets';
 document.getElementById("setPeriod").innerHTML = 'year';
 document.getElementById("totalPer").innerHTML = 'year';
@@ -58,6 +58,25 @@ let nextWord = ((id) => {
     }
     
  }
+
+ function resizeInput(type) {
+   
+
+  var input = document.getElementsByTagName('input')[type];  
+
+  input.onkeyup  = function(event) {
+
+      if(this.value.length > 3 && event.keyCode != 8 && event.keyCode != 37 && event.keyCode != 38 & event.keyCode != 39 && event.keyCode != 40) {
+        console.log(event.keyCode)
+        document.getElementsByTagName('input')[type].style.width = input.clientWidth + 50 + 'px';
+      }
+      if(event.keyCode == 8) {
+        document.getElementsByTagName('input')[type].style.width = input.clientWidth - 50 + 'px';
+      }
+     
+      // Math.max(this.value.length, 10)
+  };
+}
 /* ============================================ */
 
 
@@ -109,7 +128,7 @@ function checkTotal() {
     total = ((expectedSum * expectedPeriod) / 30).toFixed(2);;
   }
 
-  document.getElementById('totalVal').innerHTML =  '$' + total;
+  document.getElementById('totalVal').innerHTML =  total;
 }
 
 function checkTotal2() {
@@ -159,5 +178,5 @@ function checkTotal2() {
     total = ((expectedSum / 7) / expectedPeriod ).toFixed(2);;
   }
 
-  document.getElementById('cal2TotalVal').innerHTML =  '$' + total;
+  document.getElementById('cal2TotalVal').innerHTML =  total;
 }
