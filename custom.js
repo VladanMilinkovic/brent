@@ -23,7 +23,7 @@ function inputSize(id) {
 
 function isNumberKey(evt)
 {
-    let charCode = (evt.which) ? evt.which : event.keyCode;
+    let charCode = (evt.which) ? evt.which : evt.keyCode;
 
     if (charCode > 31 && (charCode < 48 || charCode > 57))
       return false;
@@ -63,16 +63,25 @@ let nextWord = ((id) => {
    
 
   var input = document.getElementsByTagName('input')[type];  
+  
 
   input.onkeyup  = function(event) {
+    
+      let charCode = (event.which) ? event.which : event.keyCode;
 
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+      }
+      
       if(this.value.length > 3 && event.keyCode != 8 && event.keyCode != 37 && event.keyCode != 38 & event.keyCode != 39 && event.keyCode != 40) {
         console.log(event.keyCode)
-        document.getElementsByTagName('input')[type].style.width = input.clientWidth + 40 + 'px';
+        document.getElementsByTagName('input')[type].style.width = input.clientWidth + 45 + 'px';
       }
       if(event.keyCode == 8) {
-        document.getElementsByTagName('input')[type].style.width = input.clientWidth - 40 + 'px';
+        document.getElementsByTagName('input')[type].style.width = input.clientWidth - 45 + 'px';
       }
+
+
      
       // Math.max(this.value.length, 10)
   };
