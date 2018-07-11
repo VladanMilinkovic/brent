@@ -74,11 +74,13 @@ let nextWord = ((id) => {
       }
       
       if(this.value.length > 3 && event.keyCode != 8 && event.keyCode != 37 && event.keyCode != 38 & event.keyCode != 39 && event.keyCode != 40) {
-        console.log(event.keyCode)
+        
         document.getElementsByTagName('input')[type].style.width = input.clientWidth + 45 + 'px';
       }
       if(event.keyCode == 8) {
-        document.getElementsByTagName('input')[type].style.width = input.clientWidth - 45 + 'px';
+        if(input.clientWidth > 100) {
+          document.getElementsByTagName('input')[type].style.width = input.clientWidth - 45 + 'px';
+        }
       }
 
 
