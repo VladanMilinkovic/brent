@@ -12,13 +12,13 @@
     <div id="calculator1" class="calculator" >
         <p>
             If I <span contenteditable="true" id="sell">sell</span> <br class="break-line">
-            <span class="currencyinput">$</span><input onkeypress="return isNumberKey(event)" onkeyup="inputSize('expectedSum')" type="text" size="6" id="expectedSum" onfocusout="checkTotal()" onkeydown="resizeInput(0)">
+            <span class="currencyinput">$</span><input onkeypress="return isNumberKey(event)"  type="text" size="6" id="expectedSum" onfocusout="checkTotal()" onkeydown="resizeInput(0)">
             <span contenteditable="true" id="textCalc" onkeyup="updateValue(this, 'updateText')">widgets</span> <br class="break-line"> per 
             <span  id="setPeriod" onclick="document.getElementById('setPeriod').innerHTML = nextWord(); checkTotal()"></span> <br class="break-line">
         </p>
         <p>
         </p>
-            at <span class="currencyinput">$</span><input onkeypress="return isNumberKey(event)" onkeyup="inputSize('expectPeriod')" onkeydown="resizeInput(1)" type="text" size="6" id="expectPeriod" onchange="checkTotal()"> <br class="break-line"> per <span id="updateText" contenteditable="true" ></span> <br class="break-line">
+            at <span class="currencyinput">$</span><input onkeypress="return isNumberKey(event)"  onkeydown="resizeInput(1)" type="text" size="6" id="expectPeriod" onchange="checkTotal()"> <br class="break-line"> per <span id="updateText" contenteditable="true" ></span> <br class="break-line">
         </p>
         <p>
             = <span class="currencyinput">$</span><span id="totalVal" ></span> per <span id="totalPer" onclick="document.getElementById('totalPer').innerHTML = nextWord(); checkTotal()"></span>
