@@ -32,7 +32,7 @@ function isNumberKey(evt)
 }
 
 let nextWord = ((id) => {
-    let wordArray = ['month','day','week','year'];
+    let wordArray = ['month','week','day','year'];
     let count = -1;
 
     return () => {
