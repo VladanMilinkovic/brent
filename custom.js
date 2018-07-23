@@ -1,11 +1,17 @@
 /* Default value */
-document.getElementById('expectedSum').value = 1000;
-document.getElementById('expectPeriod').value = 50;
-document.getElementById('totalVal').innerHTML =  50000;
+let exSum = 1000;
+let totVal = 5000;
+let exPer = 50;
+document.getElementById('expectedSum').value = exSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+document.getElementById('expectPeriod').value = exPer.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+document.getElementById('totalVal').innerHTML =  totVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 document.getElementById("updateText").innerHTML = 'widgets';
 document.getElementById("setPeriod").innerHTML = 'year';
 document.getElementById("totalPer").innerHTML = 'year';
 document.getElementById('textCalc').value = 'widgets';
+
+document.getElementById('cal2ExpectedSum').value = totVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+document.getElementById('cal2ExpectPeriod').value = exSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 
 function updateValue(event, id) {
@@ -25,10 +31,14 @@ function isNumberKey(evt)
 {
     let charCode = (evt.which) ? evt.which : evt.keyCode;
 
-    if (charCode > 31 && (charCode < 48 || charCode > 57))
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
       return false;
+    }else {
+      return true;
+    }
+      
 
-    return true;
+    
 }
 
 let nextWord = ((id) => {
@@ -59,13 +69,18 @@ let nextWord = ((id) => {
     
  }
 
+
  function resizeInput(type) {
    
-
   var input = document.getElementsByTagName('input')[type];  
-  
 
   input.onkeyup  = function(event) {
+
+      let num = input.value.replace(/,/gi, "");
+      console.log(num);
+      let num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
+    
+      input.value= num2;
     
       let charCode = (event.which) ? event.which : event.keyCode;
 
@@ -93,11 +108,11 @@ let nextWord = ((id) => {
 
 function checkTotal() {
   let total;
-  expectedSum = document.getElementById('expectedSum').value;
-  expectedPeriod = document.getElementById('expectPeriod').value;
+  expectedSum = document.getElementById('expectedSum').value.replace(',', '');
+  expectedPeriod = document.getElementById('expectPeriod').value.replace(',', '');
 
-  perSum = document.getElementById ( "setPeriod" ).textContent;
-  perTotal = document.getElementById ( "totalPer" ).textContent;
+  perSum = document.getElementById ( "setPeriod" ).textContent.replace(',', '');
+  perTotal = document.getElementById ( "totalPer" ).textContent.replace(',', '');
 
   if(perSum == perTotal) {
     total = expectedSum * expectedPeriod;
@@ -139,13 +154,14 @@ function checkTotal() {
     total = ((expectedSum * expectedPeriod) / 30).toFixed(2);;
   }
 
-  document.getElementById('totalVal').innerHTML =  total;
+  document.getElementById('totalVal').innerHTML =  total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  
 }
 
 function checkTotal2() {
   let total;
-  expectedSum = document.getElementById('cal2ExpectedSum').value;
-  expectedPeriod = document.getElementById('cal2ExpectPeriod').value;
+  expectedSum = document.getElementById('cal2ExpectedSum').value.replace(',', '');;
+  expectedPeriod = document.getElementById('cal2ExpectPeriod').value.replace(',', '');;
   perSum = document.getElementById ( "cal2SumPeriod" ).textContent;
   perTotal = document.getElementById ( "cal2PartPeriod" ).textContent;
 
@@ -189,5 +205,6 @@ function checkTotal2() {
     total = ((expectedSum / 7) / expectedPeriod ).toFixed(2);;
   }
 
-  document.getElementById('cal2TotalVal').innerHTML =  total;
+  document.getElementById('cal2TotalVal').innerHTML =  total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
