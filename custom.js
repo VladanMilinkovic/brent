@@ -76,8 +76,9 @@ let nextWord = ((id) => {
 
   input.onkeyup  = function(event) {
 
+
       let num = input.value.replace(/,/gi, "");
-      console.log(num);
+      console.log(window.screen.availWidth);
       let num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
     
       input.value= num2;
@@ -118,40 +119,40 @@ function checkTotal() {
     total = expectedSum * expectedPeriod;
   }
   if(perSum == 'year' && perTotal == 'month') {
-    total = ((expectedSum * expectedPeriod)/12).toFixed(2);
+    total = ((expectedSum * expectedPeriod)/12).toFixed(0);
   }
   if(perSum == 'year' && perTotal == 'day') {
-    total = ((expectedSum * expectedPeriod) /365).toFixed(2);
+    total = ((expectedSum * expectedPeriod) /365).toFixed(0);
   }
   if(perSum == 'year' && perTotal == 'week') {
-    total = ((expectedSum / expectedPeriod) /52).toFixed(2);
+    total = ((expectedSum / expectedPeriod) /52).toFixed(0);
   }
   if(perSum == 'week' && perTotal == 'year') {
-    total = (expectedSum * expectedPeriod * 52).toFixed(2);
+    total = (expectedSum * expectedPeriod * 52).toFixed(0);
   }
   if(perSum == 'week' && perTotal == 'month') {
-    total = ((expectedSum * expectedPeriod) *4).toFixed(2);
+    total = ((expectedSum * expectedPeriod) *4).toFixed(0);
   }
   if(perSum == 'week' && perTotal == 'day') {
-    total = ((expectedSum * expectedPeriod) /30).toFixed(2);
+    total = ((expectedSum * expectedPeriod) /30).toFixed(0);
   }
   if(perSum == 'day' && perTotal == 'year') {
-    total = ((expectedSum * expectedPeriod) *365).toFixed(2);
+    total = ((expectedSum * expectedPeriod) *365).toFixed(0);
   }
   if(perSum == 'day' && perTotal == 'month') {
-    total = ((expectedSum * expectedPeriod) * 12).toFixed(2);;
+    total = ((expectedSum * expectedPeriod) * 12).toFixed(0);;
   }
   if(perSum == 'day' && perTotal == 'week') {
-    total = ((expectedSum * expectedPeriod) * 7).toFixed(2);;
+    total = ((expectedSum * expectedPeriod) * 7).toFixed(0);;
   }
   if(perSum == 'month' && perTotal == 'year') {
-    total = ((expectedSum * expectedPeriod) *12).toFixed(2);
+    total = ((expectedSum * expectedPeriod) *12).toFixed(0);
   }
   if(perSum == 'month' && perTotal == 'week') {
-    total = ((expectedSum * expectedPeriod) / 4).toFixed(2);;
+    total = ((expectedSum * expectedPeriod) / 4).toFixed(0);;
   }
   if(perSum == 'month' && perTotal == 'day') {
-    total = ((expectedSum * expectedPeriod) / 30).toFixed(2);;
+    total = ((expectedSum * expectedPeriod) / 30).toFixed(0);;
   }
 
   document.getElementById('totalVal').innerHTML =  total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -169,40 +170,40 @@ function checkTotal2() {
     total = expectedSum / expectedPeriod;
   }
   if(perSum == 'year' && perTotal == 'month') {
-    total = ((expectedSum / expectedPeriod)/12).toFixed(2);
+    total = ((expectedSum / expectedPeriod)/12).toFixed(0);
   }
   if(perSum == 'year' && perTotal == 'day') {
-    total = (expectedSum / (expectedPeriod * 365)).toFixed(2);
+    total = (expectedSum / (expectedPeriod * 365)).toFixed(0);
   }
   if(perSum == 'year' && perTotal == 'week') {
-    total = (expectedSum / (expectedPeriod * 52)).toFixed(2);
+    total = (expectedSum / (expectedPeriod * 52)).toFixed(0);
   }
   if(perSum == 'week' && perTotal == 'year') {
-    total = ((expectedSum *52) / expectedPeriod ).toFixed(2);
+    total = ((expectedSum *52) / expectedPeriod ).toFixed(0);
   }
   if(perSum == 'week' && perTotal == 'month') {
-    total = ((expectedSum *4) / expectedPeriod ).toFixed(2);
+    total = ((expectedSum *4) / expectedPeriod ).toFixed(0);
   }
   if(perSum == 'week' && perTotal == 'day') {
-  total = ((expectedSum / 7) / expectedPeriod ).toFixed(2);
+  total = ((expectedSum / 7) / expectedPeriod ).toFixed(0);
   }
   if(perSum == 'day' && perTotal == 'year') {
-    total = ((expectedSum * 365) / expectedPeriod ).toFixed(2);
+    total = ((expectedSum * 365) / expectedPeriod ).toFixed(0);
   }
   if(perSum == 'day' && perTotal == 'month') {
-    total = ((expectedSum * 30) / expectedPeriod ).toFixed(2);;
+    total = ((expectedSum * 30) / expectedPeriod ).toFixed(0);;
   }
   if(perSum == 'day' && perTotal == 'week') {
-    total = ((expectedSum * 7) / expectedPeriod ).toFixed(2);;
+    total = ((expectedSum * 7) / expectedPeriod ).toFixed(0);;
   }
   if(perSum == 'month' && perTotal == 'day') {
-    total = ((expectedSum / 30) / expectedPeriod ).toFixed(2);
+    total = ((expectedSum / 30) / expectedPeriod ).toFixed(0);
   }
   if(perSum == 'month' && perTotal == 'year') {
-    total = ((expectedSum * 12) / expectedPeriod ).toFixed(2);
+    total = ((expectedSum * 12) / expectedPeriod ).toFixed(0);
   }
   if(perSum == 'month' && perTotal == 'week') {
-    total = ((expectedSum / 7) / expectedPeriod ).toFixed(2);;
+    total = ((expectedSum / 7) / expectedPeriod ).toFixed(0);;
   }
 
   document.getElementById('cal2TotalVal').innerHTML =  total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

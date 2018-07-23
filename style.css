@@ -50,7 +50,7 @@ html {
 } */
 
 .calculator input:focus {
-    min-width: 110px;
+    min-width:100px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -113,11 +113,23 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: text;
 }
 
+#expectedSum, #cal2ExpectedSum, #cal2ExpectPeriod {
+    width: 150px;
+}
+
+/* #expectPeriod {
+    min-width: 80px !important;
+} */
+
+#cal2ExpectPeriod {
+    min-width: 70px !important;
+}
+
 #cal2TextCalc {
     min-width: 200px;
 }
 #expectPeriod {
-    width: 110px;
+    width: 70px;
 }
 #flex {
     display: flex;
@@ -163,6 +175,14 @@ input[type=number]::-webkit-outer-spin-button {
 
     .switch, .switch2 {
         top: 90% !important;
+    }
+
+    #expectedSum, #cal2ExpectedSum, #cal2ExpectPeriod {
+        width: 100px;
+    }
+    
+    .calculator p {
+        margin: 0;
     }
   }
 
