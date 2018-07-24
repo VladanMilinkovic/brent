@@ -122,14 +122,25 @@ input[type=number]::-webkit-outer-spin-button {
 } */
 
 #cal2ExpectPeriod {
-    min-width: 70px !important;
+    min-width: 100px;
+    text-align: center;
 }
+#cal2ExpectedSum {
+    min-width: 100px;
+    text-align: center;
+}
+
 
 #cal2TextCalc {
     min-width: 200px;
 }
 #expectPeriod {
-    width: 70px ;
+    width: 100px ;
+}
+#expectedSum {
+    min-width: 100px;
+    text-align: center;
+   
 }
 #flex {
     display: flex;
