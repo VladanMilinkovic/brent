@@ -205,10 +205,15 @@ input[type=number]::-webkit-outer-spin-button {
 
     #expectedSum, #cal2ExpectedSum, #cal2ExpectPeriod {
         width: 100px;
+        text-align: left;
+    }
+
+    #expectedSum {
+        min-width: 60px;
     }
     
     .calculator p {
-        margin: 0;
+        margin: 5px 0;
     }
   }
 
@@ -232,6 +237,71 @@ input[type=number]::-webkit-outer-spin-button {
 
     #expectPeriod {
         width: 50px;
+    }
+
+  }
+
+  @media (max-height: 450px) and (max-width: 850px) {
+    .calculator {
+        font-size: 40px;
+    }
+
+    .calculator input:focus {
+        min-width:70px;
+    }
+
+    #cal2ExpectPeriod {
+        min-width: 50px !important;
+    }
+
+    .break-line {
+        display: block;
+    }
+
+    .calculator {
+        position: relative;
+        top: 0;
+        left: 0;
+        -webkit-transform: translate(-50%, -50%);
+        transform: none;
+        color: #ffffff;
+        font-size: 40px;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .calculator p {
+        text-align: left;
+    }
+
+    .calculator input {
+        text-align: left;
+        width: 100px;
+        font-size: 40px;
+    }
+
+    .switch, .switch2 {
+        display: flex;
+        position: initial;
+        top: none;
+        left: none;
+        transform: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+    }
+
+    #expectedSum, #cal2ExpectedSum, #cal2ExpectPeriod {
+        width: 100px;
+        text-align: left;
+    }
+
+    #expectedSum {
+        min-width: 60px;
+    }
+    
+    .calculator p {
+        margin: 5px 0;
     }
 
   }
