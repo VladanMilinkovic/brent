@@ -117,6 +117,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 150px;
 }
 
+
+
 /* #expectPeriod {
     min-width: 80px !important;
 } */
@@ -152,6 +154,17 @@ input[type=number]::-webkit-outer-spin-button {
     outline:none;
     background-color: #dfd4d7;
 }
+
+@-moz-document url-prefix() {
+    #expectedSum, #cal2ExpectedSum, #cal2ExpectPeriod {
+        width: 170px;
+    }
+
+    #expectPeriod {
+        min-width: 120px;
+        text-align: center;
+    }
+  }
 
 @media screen and (max-width: 600px) {
     .calculator {
