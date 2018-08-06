@@ -14,6 +14,10 @@ document.getElementById('cal2ExpectedSum').value = totVal.toString().replace(/\B
 document.getElementById('cal2ExpectPeriod').value = exSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 
+if(navigator.userAgent.indexOf('Mac') > 0) {
+  document.getElementById("expectedSum").style.width = "160px";
+}
+
 function updateValue(event, id) {
     const new_value = event.value;
     document.getElementById(id).innerHTML = new_value;
