@@ -114,7 +114,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #expectedSum, #cal2ExpectedSum, #cal2ExpectPeriod {
-    width: 150px;
+    width: 160px;
 }
 
 

@@ -14,10 +14,6 @@ document.getElementById('cal2ExpectedSum').value = totVal.toString().replace(/\B
 document.getElementById('cal2ExpectPeriod').value = exSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 
-if(navigator.userAgent.indexOf('Mac') > 0) {
-  document.getElementById("expectedSum").style.width = "160px";
-}
-
 function updateValue(event, id) {
     const new_value = event.value;
     document.getElementById(id).innerHTML = new_value;
@@ -82,7 +78,6 @@ let nextWord = ((id) => {
 
 
       let num = input.value.replace(/,/gi, "");
-      console.log(window.screen.availWidth);
       let num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
     
       input.value= num2;
@@ -97,7 +92,7 @@ let nextWord = ((id) => {
         if (window.screen.availWidth < 600) {
           document.getElementsByTagName('input')[type].style.width = input.clientWidth + 30 + 'px';
         }else {
-          document.getElementsByTagName('input')[type].style.width = input.clientWidth + 45 + 'px';
+          document.getElementsByTagName('input')[type].style.width = input.clientWidth + 50 + 'px';
         }
         
       }
