@@ -42,7 +42,7 @@ html {
 .calculator input {
  
     resize: horizontal;
-    width: 130px;
+    width: 100px;
 }
 
 /* .calculator input:active {
@@ -137,7 +137,7 @@ input[type=number]::-webkit-outer-spin-button {
     min-width: 200px;
 }
 #expectPeriod {
-    width: 100px ;
+    min-width: 100px;
 }
 #expectedSum {
     min-width: 100px;
