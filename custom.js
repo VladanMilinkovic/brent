@@ -5,7 +5,7 @@ let exPer = 50;
 document.getElementById('expectedSum').value = exSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 document.getElementById('expectPeriod').value = exPer.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 document.getElementById('totalVal').innerHTML =  totVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-document.getElementById("updateText").innerHTML = 'widgets';
+document.getElementById("updateText").innerHTML = 'widget';
 document.getElementById("setPeriod").innerHTML = 'year';
 document.getElementById("totalPer").innerHTML = 'year';
 document.getElementById('textCalc').value = 'widgets';

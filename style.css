@@ -113,15 +113,14 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: text;
 }
 
-#expectedSum, #cal2ExpectedSum, #cal2ExpectPeriod {
+#expectedSum, #cal2ExpectPeriod {
     width: 160px;
 }
 
+#cal2ExpectedSum {
+    width: 170px;
+}
 
-
-/* #expectPeriod {
-    min-width: 80px !important;
-} */
 
 #cal2ExpectPeriod {
     min-width: 100px;
