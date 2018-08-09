@@ -124,8 +124,12 @@ let nextWord = ((id) => {
 
 function checkTotal() {
   let total;
-  expectedSum = document.getElementById('expectedSum').value.replace(',', '');
-  expectedPeriod = document.getElementById('expectPeriod').value.replace(',', '');
+  check_expectedSum = document.getElementById('expectedSum').value.replace(',', '');
+  check_expectedPeriod = document.getElementById('expectPeriod').value.replace(',', '');
+
+  expectedSum = check_expectedSum.replace(/\,/g,'');
+  expectedPeriod = check_expectedPeriod.replace(/\,/g,'');
+
 
   perSum = document.getElementById ( "setPeriod" ).textContent.replace(',', '');
   perTotal = document.getElementById ( "totalPer" ).textContent.replace(',', '');
@@ -176,8 +180,12 @@ function checkTotal() {
 
 function checkTotal2() {
   let total;
-  expectedSum = document.getElementById('cal2ExpectedSum').value.replace(',', '');;
-  expectedPeriod = document.getElementById('cal2ExpectPeriod').value.replace(',', '');;
+  check_expectedSum = document.getElementById('cal2ExpectedSum').value.replace(',', '');
+  check_expectedPeriod = document.getElementById('cal2ExpectPeriod').value.replace(',', '');
+
+  expectedSum = check_expectedSum.replace(/\,/g,'');
+  expectedPeriod = check_expectedPeriod.replace(/\,/g,'');
+
   perSum = document.getElementById ( "cal2SumPeriod" ).textContent;
   perTotal = document.getElementById ( "cal2PartPeriod" ).textContent;
 
